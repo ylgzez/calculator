@@ -1,13 +1,113 @@
-body {
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+  display: grid;
+  min-height: 100vh;
+  justify-items: center;
+  align-items: center;
+}
+
+.display {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 3rem;
+  text-align: right;
+  background: black;
+}
+
+#pads {
+  display: grid;
+  width: 16rem;
+  height: 18rem;
+  border: 2px solid black;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "ac ac divide mutiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equal"
+    "zero zero decimal equal";
+}
+
+#zero,
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#decimal,
+#add,
+#subtract,
+#multiply,
+#divide,
+#equals,
+#clear {
+  color: white;
+  border: 0.8px solid black;
+}
+
+#zero:hover,
+#one:hover,
+#two:hover,
+#three:hover,
+#four:hover,
+#five:hover,
+#six:hover,
+#seven:hover,
+#eight:hover,
+#nine:hover,
+#decimal:hover,
+#add:hover,
+#subtract:hover,
+#multiply:hover,
+#divide:hover,
+#equals:hover,
+#clear:hover {
+  border-color: #e6e6e6;
+}
+
+#clear {
+  background: #b33c00;
+  grid-area: ac;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#equals {
+  background: #003399;
+  grid-area: equal;
+}
+
+#zero,
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#decimal {
+  background: #666666;
+}
+
+#add,
+#subtract,
+#multiply,
+#divide {
+  background: #8c8c8c;
 }
